@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple student task manager for assignments, labs, and study goals.">
+    <title>Student Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-shell">
+        <header class="hero">
+            <div class="brand-mark" aria-hidden="true">✓</div>
+            <p class="eyebrow">YOUR STUDY SPACE</p>
+            <h1>Student Task Manager</h1>
+            <p class="hero-copy">A little progress each day adds up to big results.</p>
+        </header>
+
+        <section class="dashboard" aria-label="Student task manager">
+            <div class="dashboard-top">
+                <div>
+                    <p class="section-kicker">MY WORKSPACE</p>
+                    <h2>My tasks</h2>
+                </div>
+                <div class="progress-badge"><span class="live-dot"></span> Stay on track</div>
+            </div>
+
+            <form id="task-form" class="task-form">
+                <label class="sr-only" for="task-input">Enter a new task</label>
+                <input id="task-input" type="text" placeholder="What do you need to get done?" maxlength="200" autocomplete="off">
+                <button type="submit" class="add-button"><span aria-hidden="true">＋</span> Add task</button>
+            </form>
+            <p id="message" class="message" role="status" aria-live="polite"></p>
+
+            <div class="stats" aria-label="Task summary">
+                <div class="stat-card">
+                    <span class="stat-icon total-icon" aria-hidden="true">▤</span>
+                    <div><span class="stat-label">Total tasks</span><strong id="task-count">0</strong></div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon done-icon" aria-hidden="true">✓</span>
+                    <div><span class="stat-label">Completed</span><strong id="completed-count">0</strong></div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon pending-icon" aria-hidden="true">◷</span>
+                    <div><span class="stat-label">Pending</span><strong id="pending-count">0</strong></div>
+                </div>
+            </div>
+
+            <div class="list-heading">
+                <h3>Task list</h3>
+                <span id="progress-text" class="progress-text">0% complete</span>
+            </div>
+            <div class="progress-track" aria-label="Task completion progress">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+
+            <div class="toolbar">
+                <label class="search-box">
+                    <span aria-hidden="true" class="search-icon">⌕</span>
+                    <span class="sr-only">Search tasks</span>
+                    <input id="search-input" type="search" placeholder="Search your tasks...">
+                </label>
+                <label class="sr-only" for="task-filter">Filter tasks</label>
+                <select id="task-filter">
+                    <option value="all">All tasks</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+
+            <ul id="task-list" class="task-list" aria-label="Tasks"></ul>
+            <div id="empty-state" class="empty-state">
+                <div class="empty-illustration" aria-hidden="true">✎</div>
+                <h3>No tasks yet</h3>
+                <p>Add your first task above and make today count.</p>
+            </div>
+        </section>
+        <footer><span aria-hidden="true">✦</span> Built for better study days.</footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
